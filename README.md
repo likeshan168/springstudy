@@ -1,5 +1,5 @@
-**Uploading Files**
+**Messaging with Redis**
 
 for the details, please refer to 
 
-https://spring.io/guides/gs/uploading-files/
+https://spring.io/guides/gs/messaging-redis/

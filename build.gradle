@@ -15,7 +15,7 @@ apply plugin: 'org.springframework.boot'
 
 
 jar {
-    baseName = 'gs-uploading-files'
+    baseName = 'gs-messaging-redis'
     version =  '0.1.0'
 }
 // this is configures for the project level
@@ -27,6 +27,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile("org.springframework.boot:spring-boot-starter")
+    compile("org.springframework.boot:spring-boot-starter-data-redis")
+    testCompile("junit:junit")
 }
