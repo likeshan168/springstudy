@@ -7,43 +7,15 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
     }
 }
-//the new plugin DSL to add the plugins
-plugins {
-    id 'com.gradle.build-scan' version '1.10.2' // this plugin is used to publish the build records to the server
-    id 'base'
-}
-//this configuration is used to accept the license of scan server
-buildScan {
-    licenseAgreementUrl = 'https://gradle.com/terms-of-service'
-    licenseAgree = 'yes'
-}
 
-//create a zip Task, then run command gradle zip/gradlew zip
-task zip(type:Zip){
-    from 'src'
-}
-//add a "Hello World" example, when run gradle hello, we will see 'hello world' in the console
-task hello(){
-    doLast{
-        println 'hello world'
-    }
-}
 //the older way to add plugins
 apply plugin: 'java' //the language plugin built on top the base plugin
-apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
-apply plugin: 'war' //this plugin will package the files as war format which will be used in server container
-
-war {
-    baseName = 'hello'
-    version =  '0.5.0'
-}
-
 
 jar {
-    baseName = 'gs-rest-service'
+    baseName = 'gs-uploading-files'
     version =  '0.1.0'
 }
 // this is configures for the project level
@@ -55,7 +27,6 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
